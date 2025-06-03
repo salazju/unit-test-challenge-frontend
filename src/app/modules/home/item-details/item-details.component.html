@@ -1,0 +1,19 @@
+<div class="p-4 sm:p-8" *ngIf="item">
+  <h1 class="pb-4">{{ item.name }}</h1>
+  <div class="bg-white rounded-lg p-4 flex flex-col sm:p-8 sm:flex-row sm:max-w-4xl">
+    <img
+      [src]="item.image || '/assets/img/item-image-unknown.png'"
+      [alt]="item.name"
+      class="h-auto w-full sm:h-80 sm:w-auto"
+    />
+    <div class="flex flex-col gap-2 sm:pl-4">
+      <p class="text-lg">Category: {{ categories() }}</p>
+      <p id="description-text" class="text-lg break-word">{{ item.description }}</p>
+      <p id="price-text" class="text-xl text-pink-600">{{ item.price | currency : "USD" : "symbol" : "1.2-2" }}</p>
+      <div class="flex gap-2 items-center">
+        <app-quantity-select [quantity]="quantity" (change)="updateQuantity($event)"></app-quantity-select>
+        <button class="flex-1" (click)="addItemToCart(item)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>

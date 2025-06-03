@@ -1,0 +1,27 @@
+<div *ngIf="listBy === 'dateAdded'">
+  <div class="grid grid-cols-1 sm:grid-cols-2 2md:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div *ngFor="let item of items">
+      <app-item-card [item]="item"></app-item-card>
+    </div>
+  </div>
+</div>
+<div *ngIf="listBy === 'category'">
+  <div *ngFor="let category of categories; let i = index">
+    <p [id]="'category-text-' + i" class="text-lg text-center font-medium text-indigo-900 pb-2">
+      {{ category | category }}
+    </p>
+    <div *ngIf="itemsByCategory">
+      <div *ngIf="itemsByCategory[category].length === 0" class="pb-8">
+        <p [id]="'no-items-text-' + i" class="text-center">No items available in this category.</p>
+      </div>
+      <div
+        *ngIf="itemsByCategory[category].length > 0"
+        class="grid grid-cols-1 sm:grid-cols-2 2md:grid-cols-3 xl:grid-cols-4 gap-4 pb-8"
+      >
+        <div *ngFor="let item of itemsByCategory[category]">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

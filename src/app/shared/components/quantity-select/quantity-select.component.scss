@@ -1,0 +1,7 @@
+.qty-btn {
+  @apply border w-6 text-center cursor-pointer select-none;
+
+  &:hover {
+    @apply bg-black bg-opacity-10;
+  }
+}

@@ -1,0 +1,11 @@
+<div class="p-4 sm:p-8">
+  <h1 class="pb-4">Add Item</h1>
+  <div class="card p-4 w-full sm:w-80">
+    <app-add-item-form
+      [formGroup]="itemForm"
+      [categoriesList]="categoriesList"
+      (submitForm)="submit()"
+      (checkboxChange)="onCheckChange($event)"
+    ></app-add-item-form>
+  </div>
+</div>

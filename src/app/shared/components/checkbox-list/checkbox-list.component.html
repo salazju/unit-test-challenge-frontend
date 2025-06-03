@@ -1,0 +1,12 @@
+<div class="flex flex-col" [formGroup]="formGroup">
+  <p class="text-sm">{{ label }}</p>
+  <div *ngFor="let checkboxItem of checkboxItems" class="pl-4">
+    <input
+      type="checkbox"
+      [formGroupName]="name"
+      [id]="checkboxItem['value']"
+      (change)="onCheckChange($event, checkboxItem['value'])"
+    />
+    <label [for]="checkboxItem['value']" class="pl-2">{{ checkboxItem["label"] }}</label>
+  </div>
+</div>

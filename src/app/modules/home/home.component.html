@@ -1,0 +1,16 @@
+<div class="p-4 sm:p-8">
+  <div class="flex flex-col pb-2 sm:flex-row sm:justify-between sm:items-end">
+    <p class="text-2xl font-medium pb-2 sm:pb-0">ITEMS ON SALE</p>
+    <app-list-by
+      (listByChange)="changeListBy($event)"
+      [orderIcon]="(isDesc$ | async) ? descIcon : ascIcon"
+      (orderClick)="toggleOrder()"
+    ></app-list-by>
+  </div>
+  <app-item-list
+    [items]="items$ | async"
+    [listBy]="listBy$ | async"
+    [categories]="categories"
+    [itemsByCategory]="itemsByCategory$ | async"
+  ></app-item-list>
+</div>

@@ -1,0 +1,15 @@
+<div class="grid grid-cols-12 gap-4">
+  <img class="col-span-2 w-24" [src]="cartItem.image || '/assets/img/item-image-unknown.png'" [alt]="cartItem.name" />
+  <div class="flex flex-col col-span-7 justify-center">
+    <a class="whitespace-nowrap text-ellipsis overflow-hidden item-name" [routerLink]="['/home', cartItem.id]">{{
+      cartItem.name
+    }}</a>
+    <p class="text-pink-600">{{ cartItem.price | currency : "USD" : "symbol" : "1.2-2" }}</p>
+  </div>
+  <div class="flex col-span-3 justify-center items-center">
+    <app-quantity-select
+      [quantity]="cartItem.quantity"
+      (change)="updateCartItemQuantity(cartItem, $event)"
+    ></app-quantity-select>
+  </div>
+</div>

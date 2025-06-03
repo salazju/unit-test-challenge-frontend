@@ -1,0 +1,16 @@
+<div class="bg-white rounded-lg p-4">
+  <p class="text-lg font-medium pb-2">Summary</p>
+  <div *ngFor="let cartItem of cartItems; let index" class="grid grid-cols-3 gap-4 pb-2">
+    <p [id]="'price-text-' + index" class="text-center">{{ cartItem.price | currency : "USD" : "symbol" : "1.2-2" }}</p>
+    <p [id]="'quantity-text-' + index" class="text-center">x{{ cartItem.quantity }}</p>
+    <p [id]="'item-total-text-' + index" class="text-center font-medium">
+      {{ cartItem.price * cartItem.quantity | currency : "USD" : "symbol" : "1.2-2" }}
+    </p>
+  </div>
+  <div class="grid grid-cols-3 gap-4 border-t pt-2">
+    <p class="col-span-2 font-medium text-end"></p>
+    <p id="summary-price-text" class="col-span-1 text-center font-medium text-indigo-700">
+      {{ totalPrice() | currency : "USD" : "symbol" : "1.2-2" }}
+    </p>
+  </div>
+</div>

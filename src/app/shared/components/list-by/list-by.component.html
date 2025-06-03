@@ -1,0 +1,8 @@
+<div class="flex gap-2">
+  <p>List By</p>
+  <select class="text-sm" (change)="changeListBy($event)">
+    <option value="dateAdded">Date Added</option>
+    <option value="category">Category</option>
+  </select>
+  <fa-icon [icon]="orderIcon" class="cursor-pointer" (click)="toggleOrder()"></fa-icon>
+</div>

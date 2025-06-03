@@ -1,0 +1,19 @@
+.btn-sidenav {
+  @apply flex flex-col items-center;
+
+  @screen sm {
+    @apply block items-start w-full bg-transparent text-gray-900 text-left py-1 px-6 rounded-md cursor-pointer;
+
+    &:hover {
+      @apply bg-indigo-700 text-white;
+    }
+  }
+}
+
+.btn-sidenav-selected {
+  @apply text-indigo-800;
+
+  @screen sm {
+    @apply bg-indigo-800 bg-opacity-100 text-white;
+  }
+}

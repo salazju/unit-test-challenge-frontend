@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  @apply bg-slate-100 text-gray-900;
+}
+
+button,
+button[type="submit"] {
+  @apply bg-indigo-800 text-white py-1 px-6 rounded-md;
+
+  &:hover {
+    @apply bg-indigo-700;
+  }
+
+  &:disabled {
+    @apply bg-gray-200 text-gray-400;
+  }
+}
+
+select {
+  @apply px-2 border border-gray-400 rounded-md;
+}
+
+h1 {
+  @apply text-2xl font-medium;
+}
+
+.item-name {
+  @apply text-blue-600;
+
+  &:hover {
+    @apply underline;
+  }
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-xl;
+}
+
+.break-word {
+  word-break: break-word;
+}

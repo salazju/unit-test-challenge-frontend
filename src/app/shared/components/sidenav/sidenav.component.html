@@ -1,0 +1,20 @@
+<div class="w-full bg-white fixed bottom-0 h-16 flex items-center sm:w-48 sm:h-full sm:left-0 sm:flex-col">
+  <div class="p-4 hidden sm:block">
+    <p class="font-bold text-xl text-center m-0">Shopping</p>
+    <p class="font-bold text-xl text-center">CRUD</p>
+  </div>
+  <div class="flex w-full gap-2 justify-evenly sm:flex-col sm:px-2">
+    <a class="btn-sidenav" [routerLink]="['/home']" routerLinkActive="btn-sidenav-selected">
+      <fa-icon [icon]="homeIcon" class="sm:pr-2"></fa-icon>
+      <span>Home</span>
+    </a>
+    <a class="btn-sidenav" [routerLink]="['/add-item']" routerLinkActive="btn-sidenav-selected">
+      <fa-icon [icon]="addIcon" class="sm:pr-2 sm:w-7" size="lg"></fa-icon>
+      <span>Add Item</span>
+    </a>
+    <a class="btn-sidenav" [routerLink]="['/my-cart']" routerLinkActive="btn-sidenav-selected">
+      <fa-icon [icon]="cartIcon" class="sm:pr-2"></fa-icon>
+      <span>My Cart</span>
+    </a>
+  </div>
+</div>

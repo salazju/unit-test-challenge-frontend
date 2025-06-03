@@ -1,0 +1,6 @@
+<app-item-details
+  [item]="item$ | async"
+  [quantity]="quantity"
+  (onQuantityChange)="updateQuantity($event)"
+  (onAddToCart)="addItemToCart($event)"
+></app-item-details>

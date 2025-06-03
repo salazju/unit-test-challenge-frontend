@@ -1,0 +1,21 @@
+<form class="flex flex-col gap-4" [formGroup]="formGroup" (ngSubmit)="submitAddItem()">
+  <app-textfield [formGroup]="formGroup" label="Name" name="name" [required]="true"></app-textfield>
+  <app-textfield [formGroup]="formGroup" label="Description" name="description"></app-textfield>
+  <app-textfield
+    [formGroup]="formGroup"
+    label="Price"
+    name="price"
+    [required]="true"
+    prefix="$"
+    patternErrorMessage="Price must be valid and have two decimal places."
+  ></app-textfield>
+  <app-checkbox-list
+    [formGroup]="formGroup"
+    label="Category"
+    name="category"
+    [checkboxItems]="categoriesList"
+    (change)="onCheckChange($event)"
+  ></app-checkbox-list>
+  <app-textfield [formGroup]="formGroup" label="Image URL" name="image"></app-textfield>
+  <button type="submit">Add</button>
+</form>

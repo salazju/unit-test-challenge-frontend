@@ -1,0 +1,12 @@
+<div class="flex flex-col w-full" [formGroup]="formGroup">
+  <label [for]="name" class="text-sm">
+    {{ label }}
+    <span *ngIf="required" class="text-red-500">*</span>
+  </label>
+  <div class="flex">
+    <span *ngIf="prefix" class="pr-2">{{ prefix }}</span>
+    <input [formControlName]="name" class="w-full" />
+  </div>
+  <p class="text-sm text-red-600 pt-1" *ngIf="hasRequiredError()">{{ label }} is required.</p>
+  <p class="text-sm text-red-600 pt-1" *ngIf="hasPatternError()">{{ patternErrorMessage }}</p>
+</div>
